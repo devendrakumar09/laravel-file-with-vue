@@ -1,20 +1,24 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import WelcomeVue from "./pages/Welcome.vue";
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Home from './pages/QuizesList.vue'
+import About from './pages/Quize.vue'
 
-Vue.user(Router);
+Vue.use(VueRouter);
 
-const routes = [
-    {
-        path : '/',
-        name : 'welcome',
-        component :WelcomeVue
-    }
-];
-
-const router = new Router({
-    routes:routes
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/about',
+            name: 'about',
+            component: About
+        }
+    ]
 });
-export default{
 
-}
+export default router;
